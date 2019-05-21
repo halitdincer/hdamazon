@@ -1,0 +1,58 @@
+<html>
+
+    <head>
+   
+        <title>Index Page</title>
+        <style>
+
+body{
+    padding : 100px;
+}
+            img{
+                height : 200px ;
+            }
+            .post{
+                width : 300px ;
+                display: inline-block ;
+                border : 1px grey solid ;
+                margin-right : 10px ;
+                padding : 20px ;
+            }
+            .post:hover{
+                background-color : lightblue ;
+            }
+            a{
+                color: black ;
+                text-decoration : none ;
+            }
+        </style> 
+    </head>
+    <body>
+    
+
+        <h1>HELLo</h1>
+
+        {% load static %}
+
+        {% for product in products %}
+
+
+        <a href="view/{{product.id}}"><div class="post">
+     
+            <img src="{{ product.main_image.url }}"  />
+            <h2>{{ product.name }}</h2>
+            <p>{{ product.description }}</p>
+            <h3>{{ product.price }} $</h3>
+        
+        </div></a>
+
+
+        {% endfor %}
+    
+    
+    </body>
+
+</html>
+
+
+

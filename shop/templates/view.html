@@ -1,0 +1,44 @@
+<html>
+
+    <head>
+   
+        <title>{{sproduct.name}}</title>
+        <style>
+       
+body{
+    padding : 50px ;
+}
+img{
+    height:300px ;
+}
+a{
+    font-size : 1.25rem ;
+    text-decoration : none ;
+
+}
+        
+        
+        </style>  
+    </head>
+
+    <body>
+        
+        <a href="../../"> Back </a></br></br>
+        <img src="{{ sproduct.main_image.url }}"/>
+        <h1>{{sproduct.name}}</h1>
+        <h3>{{sproduct.price}}$</h3>
+        <p>{{sproduct.description}}</p>
+
+
+
+
+    </body>
+
+</html>
+
+
+
+
+
+
+{{ sproduct.name }}
