@@ -3,33 +3,82 @@
     <head>
    
         <title>{{sproduct.name}}</title>
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
         <style>
-       
-body{
-    padding : 50px ;
-}
-img{
-    height:300px ;
-}
-a{
-    font-size : 1.25rem ;
-    text-decoration : none ;
+                   
+            body{
+                font-family: 'Lato', sans-serif;
+                padding : 50px ;
+            }
+            img{
+                width:100%;
+            }
+            a{
+                font-size : 1.25rem ;
+                text-decoration : none ;
 
-}
+            }
+
+            /* Split the screen in half */
+            .split {
+            
+                height: 100%;
+                width: 50%;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                overflow-x: hidden;
+                padding-top : 30px ;
+            }
+
+            /* Control the left side */
+            .left {
+                left: 0;
+            }
+
+            /* Control the right side */
+            .right {
+                right: 0;
+            }
+            .block{
+                padding : 30px ;
+            }
+            
+            .pro-cat{
+                color : grey ;
+                margin-bottom : 0px ;
+            }
+            .pro-name{
+                font-size : 3rem ; 
+                margin : 2px 0px ;
+            }
+            .pro-price{
+                margin-top : 5px ;
+            }
         
         
         </style>  
     </head>
 
     <body>
-        
+
+         
+        <div class="split left">
+            <div class="block">
+                <img src="{{ sproduct.main_image.url }}"/>
+            </div>
+        </div>
+        <div class="split right">
+            <div class="block">
+                <h3 class="pro-cat">{{sproduct.category}}</h3>
+                <h1 class="pro-name">{{sproduct.name}}</h1>
+                <h1 class="pro-price">{{sproduct.price}}$</h1>
+                <p class="pro-desc">{{sproduct.description}}</p>
+
+
         <a href="../../"> Back </a></br></br>
-        <img src="{{ sproduct.main_image.url }}"/>
-        <h1>{{sproduct.name}}</h1>
-        <h3>{{sproduct.price}}$</h3>
-        <p>{{sproduct.description}}</p>
-
-
+            </div>
+        </div>
 
 
     </body>
